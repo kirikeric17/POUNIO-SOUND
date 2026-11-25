@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0d0d0f">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="POUNIO SOUND">
+<title>POUNIO SOUND</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app" id="app">
+  <div class="bg"></div>
+  <div class="bg-shade"></div>
+
+  <!-- ================= HOME ================= -->
+  <section class="view" id="home" aria-label="Home">
+    <div class="tagline">Once we sound, na' luk ngatas</div>
+
+    <div class="brand">
+      <div class="mark">PS</div>
+      <div>
+        <div class="brand-name">POUNIO</div>
+        <div class="brand-sub">SOUND <span class="wave" id="wave"></span></div>
+      </div>
+    </div>
+
+    <div class="hero">
+      <h1><span class="gold">Sound System</span><br>Service &amp; Rental</h1>
+      <p>Professional sound setup with crew &amp; sound check — based in Kota Kinabalu, ready for your big day.</p>
+      <div class="eq" id="eq" aria-hidden="true"></div>
+    </div>
+
+    <div class="section-label">We sound for</div>
+    <div class="events" id="events"></div>
+
+    <div class="section-label">For more info</div>
+    <div class="contacts" id="contacts"></div>
+
+    <div class="cta-wrap">
+      <button class="cta" id="seePackages">
+        <span>See Packages</span>
+        <span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </button>
+      <div class="hint">5 packages · from RM449</div>
+    </div>
+  </section>
+
+  <!-- ================= PACKAGES ================= -->
+  <section class="view" id="packages" aria-label="Packages and pricing">
+    <div class="topbar">
+      <button class="back" id="back" aria-label="Back">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+      </button>
+      <div>
+        <div class="t">Packages <span>&amp; Pricing</span></div>
+        <div class="s">Pounio Sound</div>
+      </div>
+    </div>
+
+    <div class="pk-body">
+      <div class="pk-hero">
+        <div>
+          <h2>Jadi sudah kau<br><span>pilih ka?</span></h2>
+          <p>The best sound system experience, specially tailored for you. Tap a package to select it.</p>
+        </div>
+        <svg class="spk" viewBox="0 0 80 110" aria-hidden="true">
+          <defs><linearGradient id="g1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3a3a3f"/><stop offset="1" stop-color="#111"/></linearGradient></defs>
+          <rect x="4" y="2" width="72" height="106" rx="10" fill="url(#g1)" stroke="#555"/>
+          <circle cx="40" cy="30" r="12" fill="#0a0a0a" stroke="#444"/><circle cx="40" cy="30" r="4" fill="#333"/>
+          <circle cx="40" cy="72" r="26" fill="#0a0a0a" stroke="#444"/><circle cx="40" cy="72" r="16" fill="#151515" stroke="#333"/><circle cx="40" cy="72" r="6" fill="#ffc23d"/>
+        </svg>
+      </div>
+
+      <div class="tiers" id="tiers"></div>
+      <div id="pkgList"></div>
+
+      <div class="info">
+        <h4>All packages include</h4>
+        <ul><li>Setup</li><li>Basic sound check</li><li>Crew</li><li>6 hours on the day service</li></ul>
+      </div>
+
+      <div class="info">
+        <h4>Extra / Add-on <span class="from">from RM80</span></h4>
+        <p class="note">Different item, different charges. Tap to add to your booking request.</p>
+        <div class="addons" id="addons"></div>
+      </div>
+
+      <div class="info">
+        <h4>Others – Basic stage lighting</h4>
+        <ul><li>Setup</li><li>Crew</li><li>6 hours on the day service</li></ul>
+        <div class="addons"><button class="addon" data-addon="Basic Stage Lighting"><span class="plus">+</span>Add stage lighting</button></div>
+      </div>
+
+      <div class="info">
+        <h4>Transportation fee</h4>
+        <ul><li>Based in Kota Kinabalu</li><li>Extra charges may apply to areas outside of Kota Kinabalu</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Booking bar -->
+  <div class="bookbar" id="bookbar">
+    <div class="sum">
+      <small id="sumName">Select a package</small>
+      <b id="sumPrice">RM0</b>
+    </div>
+    <button class="book-btn" id="bookBtn" disabled>Book Now</button>
+  </div>
+
+  <!-- Booking sheet -->
+  <div class="scrim" id="scrim"></div>
+  <div class="sheet" id="sheet" role="dialog" aria-label="Book us now">
+    <div class="grab"></div>
+    <h3>Book Us <span>Now!</span></h3>
+    <div class="recap" id="recap"></div>
+    <label for="evDate">Event date</label>
+    <input type="date" id="evDate">
+    <label for="evPlace">Event location</label>
+    <input type="text" id="evPlace" placeholder="e.g. Kota Kinabalu">
+    <div id="people"></div>
+  </div>
+
+  <div class="toast" id="toast"></div>
+</div>
+
+<script src="script.js" defer></script>
+</body>
+</html>
